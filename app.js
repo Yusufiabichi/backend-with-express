@@ -6,16 +6,36 @@ const app = express();
 //     res.send("Hello Express");
 // });
 
+const courses = [
+    {id:1, name: 'course1'},
+    {id:2, name: 'course2'},
+]
 app.get('/', (req, res) => {
     res.send([1, 2, 3, 4, 5]);
 });
 
-//Routes
+//Routes Parameters
 app.get('/api/courses/:id', (req, res) => {
     res.send(req.params.id);
 });
 
+app.get('/api/blogs/:id', (req, res) => {
+    res.send(req.params.id)
+})
+
+//Route with two Parameters
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.params);
+});
+
+//Using Query Parameters
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.query);
+});
+
+
 const port = process.env.PORT || 3000;
+
 app.listen(port, () => {
     console.log(`Listening on port: ${port}...`)
 })
