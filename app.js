@@ -42,6 +42,10 @@ app.get('/api/posts/:year/:month', (req, res) => {
     res.send(req.query);
 });
 
+app.get('/api/students/:id', (req, res) => {
+    res.send(req.params.id);
+})
+
 // Post Request
 app.post('/api/courses', (req, res) =>{
     const schema = Joi.object({
