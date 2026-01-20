@@ -1,13 +1,26 @@
 const Joi = require('joi')
 const express = require('express');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const app = express();
+const logger = require('./logger')
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static('public'));
 
 // app.get('/', (req, res) => {
 //     res.send("Hello Express");
 // });
 
+
+//Middleware
+app.use(logger);
+app.use(function(req, res, next) {
+    console.log("Authenticating...")
+    next();
+});
+ 
 const courses = [
     {id:1, name: 'course1'},
     {id:2, name: 'course2'},
