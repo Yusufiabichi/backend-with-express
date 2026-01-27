@@ -1,4 +1,6 @@
 const config = require('config');
+const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db')
 const Joi = require('joi')
 const express = require('express');
 const helmet = require('helmet');
@@ -16,13 +18,16 @@ console.log(`app: ${app.get('env')}`);
 
 if(app.get('env') === 'development') {
     app.use(morgan('tiny'));
-    console.log('morgan is enabled')
+    startupDebugger('morgan is enabled');
 }
+
+// DB work
+dbDebugger('Connected to the database..')
 
 // Configuration
 console.log('Application Name: ' + config.get('name'));
 console.log('Mail Server: ' + config.get('mail.host'));
-console.log('Mail password: ' + config.get('mail.password'));
+// console.log('Mail password: ' + config.get('mail.password'));
 
 // app.get('/', (req, res) => {
 //     res.send("Hello Express");

@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "config": "^4.2.0",
+    "debug": "^4.4.3",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "joi": "^18.0.2",
