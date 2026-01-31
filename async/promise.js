@@ -39,7 +39,16 @@
         }, 2000);
     });
 
+    const p3 = new Promise((resolve) => {
+        setTimeout(() => {
+            console.log('Async op 3...')
+            resolve(3);
+        }, 2000);
+    });
 
-    Promise.race([p1, p2])
+
+
+
+    Promise.race([p1, p2, p3])
         .then(result => console.log(result))
         .catch(err => console.log('Error', err.message));
