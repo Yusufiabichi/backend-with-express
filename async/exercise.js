@@ -16,11 +16,7 @@ async function sendMail() {
     try {
         const customer = await getCustomer(1)
         console.log('Customer: ', customer);
-        if(customer,isGold){
-            const topMovies = await getTopMovies((movies) => {
-    
-            })
-        }
+        (customer.isGold) && const topMovies = await getTopMovies(movies)
     } catch (error) {
         
     }
