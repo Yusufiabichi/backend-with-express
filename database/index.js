@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost:27017/')
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
-// const courseSChema = new mongoose.Schema({
+// const courseSchema = new mongoose.Schema({
 //     name: String,
 //     author: String,
 //     tags: [String],
@@ -25,3 +25,5 @@ mongoose.connect('mongodb://localhost:27017/')
 //     const result = await course.save();
 //     console.log(result);
 // } 
+
+// createCourse()
