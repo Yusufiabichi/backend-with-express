@@ -35,9 +35,9 @@ console.log('Application Name: ' + config.get('name'));
 console.log('Mail Server: ' + config.get('mail.host'));
 // console.log('Mail password: ' + config.get('mail.password'));
 
-// app.get('/', (req, res) => {
-//     res.send("Hello Express");
-// });
+app.get('/', (req, res) => {
+    res.send("Hello Express");
+});
 
 
 //Middleware
